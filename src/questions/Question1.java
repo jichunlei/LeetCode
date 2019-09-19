@@ -73,7 +73,7 @@ public class Question1 {
         int[] nums={-2, 7, 11, 15};
         int target=26;
         int[] result1 = twoSumSolutionOne(nums, target);
-        int[] result2 = twoSumSolutionOne(nums, target);
+        int[] result2 = twoSumSolutionTwo(nums, target);
         System.out.println("解法一结果："+ Arrays.toString(result1));
         System.out.println("解法二结果："+ Arrays.toString(result2));
     }
