@@ -13,7 +13,7 @@ import java.util.HashMap;
 public class Question1 {
 
     /**
-     * @Description: 解法一：暴力解决
+     * @Description: 解法一：暴 力解决
      * @param nums 给定数组
      * @param target 目标和
      * @return: void
