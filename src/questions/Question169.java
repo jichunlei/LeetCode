@@ -1,6 +1,8 @@
 package questions;
 
+import java.util.Arrays;
 import java.util.HashMap;
+import java.util.Random;
 
 /**
  * @Auther: xianzilei
@@ -12,7 +14,7 @@ public class Question169 {
     /**
      * @Description: 解法一：暴力解决
      * @param nums 目标数组
-     * @return: int[]
+     * @return: int
      * @auther: xianzilei
      * @date: 2019/9/22 22:20
      **/
@@ -35,7 +37,7 @@ public class Question169 {
     /**
      * @Description: 解法二：使用map
      * @param nums 目标数组
-     * @return: int[]
+     * @return: int
      * @auther: xianzilei
      * @date: 2019/9/22 22:20
      **/
@@ -65,19 +67,77 @@ public class Question169 {
         throw new IllegalArgumentException("不存在满足要求的众数！");
     }
 
+    /**
+     * @Description: 解法三：排序法
+     * @param nums 目标数组
+     * @return: int
+     * @auther: xianzilei
+     * @date: 2019/9/26 7:56
+     **/
+    public static int majorityElement3(int[] nums) {
+        Arrays.sort(nums);
+        return nums[nums.length / 2];
+    }
+
+    /**
+     * @Description: 解法四：随机法
+     * @param nums 目标数组
+     * @return: int
+     * @auther: xianzilei
+     * @date: 2019/9/26 8:02
+     **/
+    public static int majorityElement4(int[] nums) {
+        Random random = new Random();
+        while (true) {
+            int tempIndex = random.nextInt(nums.length);
+            int temp = nums[tempIndex];
+            int count = 0;
+            for (int i = 0; i < nums.length; i++) {
+                if (nums[i] == temp) {
+                    count++;
+                }
+            }
+            if (count > nums.length / 2) {
+                return temp;
+            }
+        }
+    }
+
+    /**
+     * @Description: 解法五：投票法
+     * @param nums 目标数组
+     * @return: int
+     * @auther: xianzilei
+     * @date: 2019/9/26 8:22
+     **/
+    public static int majorityElement5(int[] nums) {
+        //初始候选人为nums[0]
+        int candidate = nums[0];
+        //初始票数为1
+        int count = 1;
+        //循环数组
+        for (int i = 1; i < nums.length; i++) {
+            //如果票数减为0，则换当前数为候选人，票数初始化为1
+            if (count == 0) {
+                candidate = nums[i];
+            }
+            //如果与当前候选人相同则票数+1，否则票数-1
+            count += candidate == nums[i] ? 1 : -1;
+        }
+        return candidate;
+    }
+
     public static void main(String[] args) {
-        int[] nums = {2, 2, 1, 1, 1, 2, 2};
+        int[] nums = {3, 2, 3, 2, 3, 2, 3, 3, 2};
         int result1 = majorityElement1(nums);
         int result2 = majorityElement2(nums);
-//        int result3 = singleNumberSolutionThree(nums);
-//        int result4 = singleNumberSolutionFour(nums);
-//        int result5 = singleNumberSolutionFive(nums);
-//        int result6 = singleNumberSolutionSix(nums);
+        int result4 = majorityElement4(nums);
+        int result5 = majorityElement5(nums);
+        int result3 = majorityElement3(nums);
         System.out.println("解法一结果：" + result1);
         System.out.println("解法二结果：" + result2);
-//        System.out.println("解法三结果：" + result3);
-//        System.out.println("解法四结果：" + result4);
-//        System.out.println("解法五结果：" + result5);
-//        System.out.println("解法六结果：" + result6);
+        System.out.println("解法三结果：" + result3);
+        System.out.println("解法四结果：" + result4);
+        System.out.println("解法五结果：" + result5);
     }
 }
