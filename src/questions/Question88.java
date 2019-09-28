@@ -47,11 +47,11 @@ public class Question88 {
 
         int index1=0;
         int index2=0;
-        for (int i = 0; i < m+n; i++) {
+        for (int i = 0; i < m+n;) {
             if(temp[index1]<=nums2[index2]){
-                nums1[i]=temp[index1++];
+                nums1[i++]=temp[index1++];
             }else{
-                nums1[i]=nums2[index2++];
+                nums1[i++]=nums2[index2++];
             }
             if(index1==m){
                 while (index2<n){
