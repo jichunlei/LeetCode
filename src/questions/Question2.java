@@ -70,7 +70,7 @@ public class Question2 {
         return reverse(temp3);
     }
 
-    //反转链表
+    //反转链表（非递归实现）
     private static ListNode reverse(ListNode l) {
 
         if (l == null || l.next == null) {
@@ -87,6 +87,18 @@ public class Question2 {
             cur = next;
         }
         return prev;
+    }
+
+    //反转链表（递归实现）
+    private static ListNode reverseByRecursion(ListNode head) {
+
+        if (head == null || head.next == null) {
+            return head;
+        }
+        ListNode result = reverseByRecursion(head.next);
+        head.next.next=head;
+        head.next=null;
+        return result;
     }
 
     //打印链表
