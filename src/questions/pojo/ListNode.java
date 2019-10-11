@@ -1,4 +1,4 @@
-package questions;
+package questions.pojo;
 
 /**
  * @Auther: xianzilei
@@ -7,11 +7,11 @@ package questions;
  */
 public class ListNode {
     //节点值
-    int val;
+    public int val;
     //下一节点引用
-    ListNode next;
+    public ListNode next;
 
-    ListNode(int x) {
+    public ListNode(int x) {
         val = x;
     }
 }
