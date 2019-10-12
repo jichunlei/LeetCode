@@ -1,4 +1,4 @@
-package questions;
+package questions.linked_list;
 
 import questions.pojo.ListNode;
 
