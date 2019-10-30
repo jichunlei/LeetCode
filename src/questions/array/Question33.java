@@ -74,7 +74,7 @@ public class Question33 {
         while (start < end) {
             int mid = (start + end) / 2;
             //使用三个条件的异或，省去繁杂的判断逻辑
-            if ((nums[0] > target) ^ (nums[0] > nums[mid]) ^ (target > nums[mid]))
+            if ((nums[start] > target) ^ (nums[start] > nums[mid]) ^ (target > nums[mid]))
                 start = mid + 1;
             else
                 end = mid;
