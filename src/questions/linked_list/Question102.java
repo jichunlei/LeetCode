@@ -1,8 +1,7 @@
 package questions.linked_list;
 
-import questions.pojo.BiTreeNode;
+import questions.pojo.TreeNode;
 
-import javax.swing.tree.TreeNode;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -15,7 +14,7 @@ public class Question102 {
 
     List<List<Integer>> levels = new ArrayList<>();
 
-    private void helper(BiTreeNode node, int level) {
+    private void helper(TreeNode node, int level) {
         if (levels.size() == level) {
             levels.add(new ArrayList<>());
         }
@@ -28,7 +27,7 @@ public class Question102 {
     }
 
 
-    public List<List<Integer>> levelOrder(BiTreeNode root) {
+    public List<List<Integer>> levelOrder(TreeNode root) {
 
         if (root != null) {
             helper(root, 0);

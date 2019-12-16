@@ -1,6 +1,6 @@
 package questions.linked_list;
 
-import questions.pojo.BiTreeNode;
+import questions.pojo.TreeNode;
 
 import java.util.LinkedList;
 
@@ -10,14 +10,14 @@ import java.util.LinkedList;
  * @Description: TODO
  */
 public class Qusetion1021 {
-    public void levelIterator(BiTreeNode root)
+    public void levelIterator(TreeNode root)
     {
         if(root == null)
         {
             return ;
         }
-        LinkedList<BiTreeNode> queue = new LinkedList<>();
-        BiTreeNode current = null;
+        LinkedList<TreeNode> queue = new LinkedList<>();
+        TreeNode current = null;
         queue.offer(root);//将根节点入队
         while(!queue.isEmpty())
         {
