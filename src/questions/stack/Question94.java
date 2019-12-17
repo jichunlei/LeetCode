@@ -14,7 +14,7 @@ import java.util.Stack;
  */
 public class Question94 {
     /**
-     * 功能描述: 递归写法
+     * 解法一：递归写法
      *
      * @param root 1
      * @return java.util.List<java.lang.Integer>
@@ -41,7 +41,7 @@ public class Question94 {
     }
 
     /**
-     * 功能描述: 非递归写法
+     * 解法一：非递归写法（使用栈）
      *
      * @param root 1
      * @return java.util.List<java.lang.Integer>
