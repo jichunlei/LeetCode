@@ -37,8 +37,10 @@ public class Question1 {
         //递归结束标志
         if (start == end) {
             System.out.println(Arrays.toString(a));
+            //记录组合数
             num++;
         } else {
+            //从起始位置开始递归处理
             for (int i = start; i <= end; i++) {
                 //将第i位置的元素放到第一位
                 swap(a, start, i);
