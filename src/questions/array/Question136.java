@@ -99,11 +99,11 @@ public class Question136 {
         if (nums.length == 1) {
             return nums[0];
         }
-        if(nums[0]!=nums[1]){
+        if (nums[0] != nums[1]) {
             return nums[0];
         }
-        if(nums[nums.length-1]!=nums[nums.length-2]){
-            return nums[nums.length-1];
+        if (nums[nums.length - 1] != nums[nums.length - 2]) {
+            return nums[nums.length - 1];
         }
         if (nums.length > 2) {
             for (int i = 1; i < nums.length - 1; i++) {
@@ -116,39 +116,39 @@ public class Question136 {
     }
 
     /**
-     * @Description: 解法五：按位异或操作（最优）
      * @param nums 目标数组
+     * @Description: 解法五：按位异或操作（最优）
      * @return: int
      * @auther: xianzilei
      * @date: 2019/9/22 10:33
      **/
     public static int singleNumberSolutionFive(int[] nums) {
-        int result=0;
+        int result = 0;
         for (int num : nums) {
-            result^=num;
+            result ^= num;
         }
         return result;
     }
 
     /**
-     * @Description: 解法六：数学运算
      * @param nums 目标数组
+     * @Description: 解法六：数学运算
      * @return: int
      * @auther: xianzilei
      * @date: 2019/9/22 10:33
      **/
     public static int singleNumberSolutionSix(int[] nums) {
-        int sum1=0;//不重复元素和
-        int sum2=0;//数组元素和
+        int sum1 = 0;//不重复元素和
+        int sum2 = 0;//数组元素和
         HashSet<Integer> set = new HashSet<>();
         for (int num : nums) {
             boolean flag = set.add(num);
-            if(flag){
-               sum1+=num;
+            if (flag) {
+                sum1 += num;
             }
-            sum2+=num;
+            sum2 += num;
         }
-        return 2*sum1-sum2;
+        return 2 * sum1 - sum2;
     }
 
     public static void main(String[] args) {

@@ -11,9 +11,9 @@ import java.util.HashMap;
 public class Question1 {
 
     /**
-     * @Description: 解法一：暴力解决
      * @param nums   给定数组
      * @param target 目标和
+     * @Description: 解法一：暴力解决
      * @return: void
      * @auther: xianzilei
      * @date: 2019/9/19 22:15
@@ -36,9 +36,9 @@ public class Question1 {
     }
 
     /**
-     * @Description: 解法二：两次遍历HashMap
      * @param nums   给定数组
      * @param target 目标和
+     * @Description: 解法二：两次遍历HashMap
      * @return: void
      * @auther: xianzilei
      * @date: 2019/9/19 22:15
@@ -67,9 +67,9 @@ public class Question1 {
     }
 
     /**
-     * @Description: 解法三：一次遍历hashMap（最优）
      * @param nums   给定数组
      * @param target 目标和
+     * @Description: 解法三：一次遍历hashMap（最优）
      * @return: int[]
      * @auther: xianzilei
      * @date: 2019/9/21 22:17
@@ -99,7 +99,7 @@ public class Question1 {
 
 
     public static void main(String[] args) {
-        int[] nums = {-2, 7, 12, 7,9,12,9};
+        int[] nums = {-2, 7, 12, 7, 9, 12, 9};
         int target = 18;
         int[] result1 = twoSumSolutionOne(nums, target);
         int[] result2 = twoSumSolutionTwo(nums, target);

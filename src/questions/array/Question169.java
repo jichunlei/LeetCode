@@ -12,8 +12,8 @@ import java.util.Random;
 public class Question169 {
 
     /**
-     * @Description: 解法一：暴力解决
      * @param nums 目标数组
+     * @Description: 解法一：暴力解决
      * @return: int
      * @auther: xianzilei
      * @date: 2019/9/22 22:20
@@ -35,8 +35,8 @@ public class Question169 {
     }
 
     /**
-     * @Description: 解法二：使用map
      * @param nums 目标数组
+     * @Description: 解法二：使用map
      * @return: int
      * @auther: xianzilei
      * @date: 2019/9/22 22:20
@@ -68,8 +68,8 @@ public class Question169 {
     }
 
     /**
-     * @Description: 解法三：排序法
      * @param nums 目标数组
+     * @Description: 解法三：排序法
      * @return: int
      * @auther: xianzilei
      * @date: 2019/9/26 7:56
@@ -80,8 +80,8 @@ public class Question169 {
     }
 
     /**
-     * @Description: 解法四：随机法
      * @param nums 目标数组
+     * @Description: 解法四：随机法
      * @return: int
      * @auther: xianzilei
      * @date: 2019/9/26 8:02
@@ -104,8 +104,8 @@ public class Question169 {
     }
 
     /**
-     * @Description: 解法五：投票法
      * @param nums 目标数组
+     * @Description: 解法五：投票法
      * @return: int
      * @auther: xianzilei
      * @date: 2019/9/26 8:22

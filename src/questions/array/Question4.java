@@ -39,7 +39,7 @@ public class Question4 {
 
     public static void main(String[] args) {
         int[] nums1 = {1, 2};
-        int[] nums2 = { };
+        int[] nums2 = {};
         System.out.println("解法一结果：" + findMedianSortedArrays1(nums1, nums2));
 //        System.out.println("解法二结果：" +  findMedianSortedArrays1(nums1,nums2));
 //        System.out.println("解法三结果：" + findMedianSortedArrays1(nums1,nums2));

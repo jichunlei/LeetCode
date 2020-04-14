@@ -98,8 +98,8 @@ public class Question2 {
             return head;
         }
         ListNode result = reverseByRecursion(head.next);
-        head.next.next=head;
-        head.next=null;
+        head.next.next = head;
+        head.next = null;
         return result;
     }
 
