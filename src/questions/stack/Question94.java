@@ -1,6 +1,6 @@
 package questions.stack;
 
-import questions.pojo.TreeNode;
+import pojo.TreeNode;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -29,6 +29,15 @@ public class Question94 {
         return list;
     }
 
+    /**
+     * 功能描述: 递归写法
+     *
+     * @param node 1
+     * @param list 2
+     * @return void
+     * @author xianzilei
+     * @date 2019/12/30 8:42
+     **/
     private static void fun(TreeNode node, List<Integer> list) {
         if (node.left != null) {
             fun(node.left, list);
@@ -37,11 +46,10 @@ public class Question94 {
         if (node.right != null) {
             fun(node.right, list);
         }
-
     }
 
     /**
-     * 解法一：非递归写法（使用栈）
+     * 解法二：非递归写法（使用栈）
      *
      * @param root 1
      * @return java.util.List<java.lang.Integer>
@@ -64,6 +72,26 @@ public class Question94 {
         return list;
     }
 
+
+    /**
+     * 解法三：莫里斯遍历--TODO
+     *
+     * @param root 1
+     * @return java.util.List<java.lang.Integer>
+     * @author xianzilei
+     * @date 2019/12/30 18:33
+     **/
+    public static List<Integer> Morris(TreeNode root) {
+        List<Integer> list = new ArrayList<>();
+        if (root != null) {
+            if (root.left != null) {
+
+            }
+        }
+
+
+        return list;
+    }
 
     public static void main(String[] args) {
         TreeNode root = new TreeNode(1);

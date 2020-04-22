@@ -1,4 +1,4 @@
-package questions.pojo;
+package pojo;
 
 import java.util.Stack;
 

@@ -1,6 +1,6 @@
 package questions.stack;
 
-import questions.pojo.MinStack;
+import pojo.MinStack;
 
 /**
  * 最小栈

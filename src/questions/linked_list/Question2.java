@@ -1,6 +1,6 @@
 package questions.linked_list;
 
-import questions.pojo.ListNode;
+import pojo.ListNode;
 
 /**
  * @Auther: xianzilei

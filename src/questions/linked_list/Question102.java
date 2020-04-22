@@ -1,6 +1,6 @@
 package questions.linked_list;
 
-import questions.pojo.TreeNode;
+import pojo.TreeNode;
 
 import java.util.ArrayList;
 import java.util.List;
