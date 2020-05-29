@@ -46,7 +46,7 @@ public class Question394 {
     }
 
     /**
-     * 功能描述: 解法一--单栈法
+     * 功能描述: 解法二--单栈法
      *
      * @param s 1
      * @return java.lang.String
