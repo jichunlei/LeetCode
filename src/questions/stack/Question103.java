@@ -16,14 +16,14 @@ import java.util.Queue;
 public class Question103 {
 
     /**
-     * 功能描述: 解法一：
+     * 功能描述: 解法一：BFS
      *
      * @param root
      * @return java.util.List<java.util.List < java.lang.Integer>>
      * @author xianzilei
      * @date 2020/5/29 14:58
      **/
-    public List<List<Integer>> zigzagLevelOrder(TreeNode root) {
+    public static List<List<Integer>> zigzagLevelOrder1(TreeNode root) {
         if (root == null) {
             return new ArrayList<List<Integer>>();
         }
@@ -38,26 +38,37 @@ public class Question103 {
                 TreeNode node = queue.poll();
                 if (node != null) {
                     list.add(node.val);
-                    if (left) {
-                        if (node.left != null) {
-                            queue.offer(node.left);
-                        }
-                        if (node.right != null) {
-                            queue.offer(node.right);
-                        }
-                    } else {
-                        if (node.right != null) {
-                            queue.offer(node.right);
-                        }
-                        if (node.left != null) {
-                            queue.offer(node.left);
-                        }
+                    if (node.left != null) {
+                        queue.offer(node.left);
+                    }
+                    if (node.right != null) {
+                        queue.offer(node.right);
                     }
                 }
             }
-
+            if (!list.isEmpty()) {
+                result.add(list);
+            }
         }
-
         return result;
+    }
+
+
+    public static void main(String[] args) {
+        TreeNode root = new TreeNode(3);
+        TreeNode t1 = new TreeNode(9);
+        TreeNode t2 = new TreeNode(20);
+        TreeNode t3 = new TreeNode(15);
+        TreeNode t4 = new TreeNode(7);
+        TreeNode t5 = new TreeNode(36);
+        TreeNode t6 = new TreeNode(6);
+        root.left = t1;
+        root.right = t2;
+        t2.left = t3;
+        t2.right = t4;
+        t3.left = t6;
+        t4.right = t5;
+        System.out.println(zigzagLevelOrder1(root));
+        //[[3], [9, 20], [15, 7], [6, 36]]
     }
 }
