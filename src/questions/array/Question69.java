@@ -1,8 +1,8 @@
 package questions.array;
 
 /**
- * @Auther: xianzilei
- * @Date: 2019/10/16 18:49
+ * @author : xianzilei
+ * @date : 2019/10/16 18:49
  * @Description: x 的平方根
  */
 public class Question69 {
@@ -12,8 +12,8 @@ public class Question69 {
      *
      * @param x 1
      * @return: int
-     * @auther: xianzilei
-     * @date: 2019/10/16 18:58
+     * @author : xianzilei
+     * @date : 2019/10/16 18:58
      **/
     public static int mySqrt(int x) {
         if (x <= 1) {

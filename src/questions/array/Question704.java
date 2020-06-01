@@ -1,9 +1,9 @@
 package questions.array;
 
 /**
- * @Auther: xianzilei
- * @Date: 2019/10/16 08:34
- * @Description: 二分查找
+ * @author : xianzilei
+ * @date : 2019/10/16 08:34
+ * @description: 二分查找
  */
 public class Question704 {
 
@@ -13,8 +13,8 @@ public class Question704 {
      * @param nums   1
      * @param target 2
      * @return: int
-     * @auther: xianzilei
-     * @date: 2019/10/16 8:36
+     * @author : xianzilei
+     * @date : 2019/10/16 8:36
      **/
     public static int searchBinary1(int[] nums, int target) {
         int start = 0;

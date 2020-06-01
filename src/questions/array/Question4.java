@@ -1,8 +1,8 @@
 package questions.array;
 
 /**
- * @Auther: xianzilei
- * @Date: 2019/10/9 07:59
+ * @author : xianzilei
+ * @date : 2019/10/9 07:59
  * @Description: 寻找两个有序数组的中位数
  */
 public class Question4 {
@@ -13,8 +13,8 @@ public class Question4 {
      * @param nums1 1
      * @param nums2 2
      * @return: double
-     * @auther: xianzilei
-     * @date: 2019/10/9 8:36
+     * @author : xianzilei
+     * @date : 2019/10/9 8:36
      **/
     public static double findMedianSortedArrays1(int[] nums1, int[] nums2) {
         int len1 = nums1.length;//nums1数组长度

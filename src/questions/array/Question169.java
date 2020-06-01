@@ -5,8 +5,8 @@ import java.util.HashMap;
 import java.util.Random;
 
 /**
- * @Auther: xianzilei
- * @Date: 2019/9/22 22:18
+ * @author : xianzilei
+ * @date : 2019/9/22 22:18
  * @Description: 求众数
  */
 public class Question169 {
@@ -15,8 +15,8 @@ public class Question169 {
      * @param nums 目标数组
      * @Description: 解法一：暴力解决
      * @return: int
-     * @auther: xianzilei
-     * @date: 2019/9/22 22:20
+     * @author : xianzilei
+     * @date : 2019/9/22 22:20
      **/
     public static int majorityElement1(int[] nums) {
         for (int num : nums) {
@@ -38,8 +38,8 @@ public class Question169 {
      * @param nums 目标数组
      * @Description: 解法二：使用map
      * @return: int
-     * @auther: xianzilei
-     * @date: 2019/9/22 22:20
+     * @author : xianzilei
+     * @date : 2019/9/22 22:20
      **/
     public static int majorityElement2(int[] nums) {
         //定义map存放数组元素，key为元素值，value为元素出现个数
@@ -71,8 +71,8 @@ public class Question169 {
      * @param nums 目标数组
      * @Description: 解法三：排序法
      * @return: int
-     * @auther: xianzilei
-     * @date: 2019/9/26 7:56
+     * @author : xianzilei
+     * @date : 2019/9/26 7:56
      **/
     public static int majorityElement3(int[] nums) {
         Arrays.sort(nums);
@@ -83,8 +83,8 @@ public class Question169 {
      * @param nums 目标数组
      * @Description: 解法四：随机法
      * @return: int
-     * @auther: xianzilei
-     * @date: 2019/9/26 8:02
+     * @author : xianzilei
+     * @date : 2019/9/26 8:02
      **/
     public static int majorityElement4(int[] nums) {
         Random random = new Random();
@@ -107,8 +107,8 @@ public class Question169 {
      * @param nums 目标数组
      * @Description: 解法五：投票法
      * @return: int
-     * @auther: xianzilei
-     * @date: 2019/9/26 8:22
+     * @author : xianzilei
+     * @date : 2019/9/26 8:22
      **/
     public static int majorityElement5(int[] nums) {
         //初始候选人为nums[0]

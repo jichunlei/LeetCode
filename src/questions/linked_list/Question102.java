@@ -6,9 +6,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * @Auther: xianzilei
- * @Date: 2019/9/28 22:05
- * @Description: 二叉树层次遍历
+ * @author : xianzilei
+ * @date : 2019/9/28 22:05
+ * @description : 二叉树层次遍历
  */
 public class Question102 {
 

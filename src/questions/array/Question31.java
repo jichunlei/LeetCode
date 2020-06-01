@@ -3,8 +3,8 @@ package questions.array;
 import java.util.Arrays;
 
 /**
- * @Auther: xianzilei
- * @Date: 2019/10/12 07:49
+ * @author : xianzilei
+ * @date : 2019/10/12 07:49
  * @Description: 下一个排列
  */
 public class Question31 {
@@ -14,8 +14,8 @@ public class Question31 {
      *
      * @param nums
      * @return: void
-     * @auther: xianzilei
-     * @date: 2019/10/12 8:47
+     * @author : xianzilei
+     * @date : 2019/10/12 8:47
      **/
     public static void nextPermutation1(int[] nums) {
         //目标位置，标记需要修改的位置，初始化为-1

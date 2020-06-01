@@ -5,8 +5,8 @@ import pojo.TreeNode;
 import java.util.LinkedList;
 
 /**
- * @Auther: xianzilei
- * @Date: 2019/9/29 08:34
+ * @author : xianzilei
+ * @date : 2019/9/29 08:34
  * @Description: TODO
  */
 public class Qusetion1021 {

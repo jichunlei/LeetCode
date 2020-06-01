@@ -3,8 +3,8 @@ package questions.array;
 import java.util.*;
 
 /**
- * @Auther: xianzilei
- * @Date: 2019/9/21 22:53
+ * @author : xianzilei
+ * @date : 2019/9/21 22:53
  * @Description: 只出现一次的数字
  */
 public class Question136 {
@@ -13,8 +13,8 @@ public class Question136 {
      * @param nums 目标数组
      * @Description: 解法一：暴力解决
      * @return: int 只出现一次的数字
-     * @auther: xianzilei
-     * @date: 2019/9/21 23:10
+     * @author : xianzilei
+     * @date : 2019/9/21 23:10
      **/
     public static int singleNumberSolutionOne(int[] nums) {
         for (int i = 0; i < nums.length; i++) {
@@ -36,8 +36,8 @@ public class Question136 {
      * @param nums 目标数组
      * @Description: 解法二：两次遍历map
      * @return: int 只出现一次的数字
-     * @auther: xianzilei
-     * @date: 2019/9/21 23:10
+     * @author : xianzilei
+     * @date : 2019/9/21 23:10
      **/
     public static int singleNumberSolutionTwo(int[] nums) {
         HashMap<Integer, Integer> map = new HashMap<>();
@@ -64,8 +64,8 @@ public class Question136 {
      * @param nums 目标数组
      * @Description: 解法三：一次遍历map
      * @return: int 只出现一次的数字
-     * @auther: xianzilei
-     * @date: 2019/9/21 23:10
+     * @author : xianzilei
+     * @date : 2019/9/21 23:10
      **/
     public static int singleNumberSolutionThree(int[] nums) {
         HashMap<Integer, Integer> map = new HashMap<>();
@@ -91,8 +91,8 @@ public class Question136 {
      * @param nums 目标数组
      * @Description: 解法四：排序+暴力（暴力解决的优化）
      * @return: int 只出现一次的数字
-     * @auther: xianzilei
-     * @date: 2019/9/21 23:10
+     * @author : xianzilei
+     * @date : 2019/9/21 23:10
      **/
     public static int singleNumberSolutionFour(int[] nums) {
         Arrays.sort(nums);
@@ -119,8 +119,8 @@ public class Question136 {
      * @param nums 目标数组
      * @Description: 解法五：按位异或操作（最优）
      * @return: int
-     * @auther: xianzilei
-     * @date: 2019/9/22 10:33
+     * @author : xianzilei
+     * @date : 2019/9/22 10:33
      **/
     public static int singleNumberSolutionFive(int[] nums) {
         int result = 0;
@@ -134,8 +134,8 @@ public class Question136 {
      * @param nums 目标数组
      * @Description: 解法六：数学运算
      * @return: int
-     * @auther: xianzilei
-     * @date: 2019/9/22 10:33
+     * @author : xianzilei
+     * @date : 2019/9/22 10:33
      **/
     public static int singleNumberSolutionSix(int[] nums) {
         int sum1 = 0;//不重复元素和

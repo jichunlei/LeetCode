@@ -1,8 +1,8 @@
 package questions.array;
 
 /**
- * @Auther: xianzilei
- * @Date: 2019/10/10 07:58
+ * @author : xianzilei
+ * @date : 2019/10/10 07:58
  * @Description: 盛最多水的容器
  */
 public class Question11 {
@@ -12,8 +12,8 @@ public class Question11 {
      *
      * @param height
      * @return: int
-     * @auther: xianzilei
-     * @date: 2019/10/10 8:00
+     * @author : xianzilei
+     * @date : 2019/10/10 8:00
      **/
     public static int maxArea1(int[] height) {
         int result = 0;
@@ -33,8 +33,8 @@ public class Question11 {
      *
      * @param height 1
      * @return: int
-     * @auther: xianzilei
-     * @date: 2019/10/10 8:18
+     * @author : xianzilei
+     * @date : 2019/10/10 8:18
      **/
     public static int maxArea2(int[] height) {
         int i = 0, j = height.length - 1;

@@ -1,8 +1,8 @@
 package questions.array;
 
 /**
- * @Auther: xianzilei
- * @Date: 2019/10/12 08:55
+ * @author : xianzilei
+ * @date : 2019/10/12 08:55
  * @Description: 搜索旋转排序数组
  */
 public class Question33 {
@@ -13,8 +13,8 @@ public class Question33 {
      * @param nums   1
      * @param target 2
      * @return: int
-     * @auther: xianzilei
-     * @date: 2019/10/14 8:55
+     * @author : xianzilei
+     * @date : 2019/10/14 8:55
      **/
     public static int search1(int[] nums, int target) {
         //如果数组为空，直接返回-1
@@ -65,8 +65,8 @@ public class Question33 {
      * @param nums   1
      * @param target 2
      * @return: int
-     * @auther: xianzilei
-     * @date: 2019/10/14 8:55
+     * @author : xianzilei
+     * @date : 2019/10/14 8:55
      **/
     public static int search2(int[] nums, int target) {
         //定义起止点

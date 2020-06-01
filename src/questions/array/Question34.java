@@ -1,8 +1,8 @@
 package questions.array;
 
 /**
- * @Auther: xianzilei
- * @Date: 2019/10/15 08:26
+ * @author : xianzilei
+ * @date : 2019/10/15 08:26
  * @Description: 在排序数组中查找元素的第一个和最后一个位置
  */
 public class Question34 {
@@ -13,8 +13,8 @@ public class Question34 {
      * @param nums
      * @param target
      * @return: int[]
-     * @auther: xianzilei
-     * @date: 2019/10/15 8:27
+     * @author : xianzilei
+     * @date : 2019/10/15 8:27
      **/
     public int[] searchRange1(int[] nums, int target) {
 

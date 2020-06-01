@@ -3,8 +3,8 @@ package questions.array;
 import java.util.Arrays;
 
 /**
- * @Auther: xianzilei
- * @Date: 2019/9/26 08:32
+ * @author : xianzilei
+ * @date : 2019/9/26 08:32
  * @Description: 合并两个有序数组
  */
 public class Question88 {
@@ -16,8 +16,8 @@ public class Question88 {
      * @param n     4
      * @Description: 直接排序法
      * @return: void
-     * @auther: xianzilei
-     * @date: 2019/9/26 8:37
+     * @author : xianzilei
+     * @date : 2019/9/26 8:37
      **/
     public static void merge1(int[] nums1, int m, int[] nums2, int n) {
         //将nums数组数放入nums1中
@@ -35,8 +35,8 @@ public class Question88 {
      * @param n     4
      * @Description: 双指针法
      * @return: void
-     * @auther: xianzilei
-     * @date: 2019/9/26 8:53
+     * @author : xianzilei
+     * @date : 2019/9/26 8:53
      **/
     public static void merge2(int[] nums1, int m, int[] nums2, int n) {
         //先将nums数组copy到另外的空间

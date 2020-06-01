@@ -4,8 +4,8 @@ import java.util.Arrays;
 import java.util.HashMap;
 
 /**
- * @Auther: xianzilei
- * @Date: 2019/9/19 22:08
+ * @author: xianzilei
+ * @date : 2019/9/19 22:08
  * @Description: 两数之和
  */
 public class Question1 {
@@ -15,8 +15,8 @@ public class Question1 {
      * @param target 目标和
      * @Description: 解法一：暴力解决
      * @return: void
-     * @auther: xianzilei
-     * @date: 2019/9/19 22:15
+     * @author : xianzilei
+     * @date : 2019/9/19 22:15
      **/
     public static int[] twoSumSolutionOne(int[] nums, int target) {
         //定义初始结果，默认为[-1,-1]
@@ -40,8 +40,8 @@ public class Question1 {
      * @param target 目标和
      * @Description: 解法二：两次遍历HashMap
      * @return: void
-     * @auther: xianzilei
-     * @date: 2019/9/19 22:15
+     * @author : xianzilei
+     * @date : 2019/9/19 22:15
      **/
     public static int[] twoSumSolutionTwo(int[] nums, int target) {
         //定义初始结果，默认为[-1,-1]
@@ -71,8 +71,8 @@ public class Question1 {
      * @param target 目标和
      * @Description: 解法三：一次遍历hashMap（最优）
      * @return: int[]
-     * @auther: xianzilei
-     * @date: 2019/9/21 22:17
+     * @author : xianzilei
+     * @date : 2019/9/21 22:17
      **/
     public static int[] twoSumSolutionThree(int[] nums, int target) {
         //定义初始结果，默认为[-1,-1]

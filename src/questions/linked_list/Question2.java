@@ -3,8 +3,8 @@ package questions.linked_list;
 import pojo.ListNode;
 
 /**
- * @Auther: xianzilei
- * @Date: 2019/10/7 07:57
+ * @author : xianzilei
+ * @date : 2019/10/7 07:57
  * @Description: 两数相加
  */
 public class Question2 {
@@ -14,8 +14,8 @@ public class Question2 {
      * @param l1 1
      * @param l2 2
      * @return: questions.ListNode
-     * @auther: xianzilei
-     * @date: 2019/10/7 8:05
+     * @author : xianzilei
+     * @date : 2019/10/7 8:05
      **/
     public static ListNode addTwoNumbers1(ListNode l1, ListNode l2) {
         //初始化头结点
@@ -59,8 +59,8 @@ public class Question2 {
      * @param l1 1
      * @param l2 2
      * @return: questions.ListNode
-     * @auther: xianzilei
-     * @date: 2019/10/7 8:05
+     * @author : xianzilei
+     * @date : 2019/10/7 8:05
      **/
     public static ListNode addTwoNumbers2(ListNode l1, ListNode l2) {
         //倒置链表l1和l2
