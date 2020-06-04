@@ -73,7 +73,14 @@ public class Question103 {
         return result;
     }
 
-
+    /**
+     * 功能描述: 解法二-DFS
+     *
+     * @param root 1
+     * @return java.util.List<java.util.List < java.lang.Integer>>
+     * @author xianzilei
+     * @date 2020/6/4 20:39
+     **/
     public static List<List<Integer>> zigzagLevelOrder2(TreeNode root) {
         //如果root为null，返回空list
         if (root == null) {
