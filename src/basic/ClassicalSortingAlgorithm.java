@@ -99,10 +99,8 @@ public class ClassicalSortingAlgorithm {
     private static int partition(int[] nums, int start, int end) {
         int index = start;
         int target = nums[index];
-        for (int i = start + 1; i <= end; i++) {
-            if (target > nums[i]){
-
-            }
+        while(start<end){
+            //https://www.cnblogs.com/0201zcr/p/4763806.html
         }
         return index;
     }
