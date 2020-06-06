@@ -83,26 +83,51 @@ public class ClassicalSortingAlgorithm {
         return nums;
     }
 
-
-    public static int[] QuickSort(int[] nums, int start, int end) {
-        int target = nums[start];
-        int i = start;
-        int j = end;
-        while (i < j) {
-            while (i < j && nums[j] >= target) {
-                j--;
-            }
-        }
+    /**
+     * 快速排序
+     *
+     * @param nums 1
+     * @return int[]
+     * @author xianzilei
+     * @date 2020/6/6 23:39
+     **/
+    public static int[] quickSort(int[] nums) {
+        qSort(nums, 0, nums.length - 1);
         return nums;
     }
 
-    private static int partition(int[] nums, int start, int end) {
-        int index = start;
-        int target = nums[index];
-        while(start<end){
-            //https://www.cnblogs.com/0201zcr/p/4763806.html
+    private static void qSort(int[] nums, int start, int end) {
+        if (start < end) {
+            //排序中轴位置
+            int middle = getMiddle(nums, start, end);
+            //递归排序左半部分
+            qSort(nums, start, middle - 1);
+            //递归排序右半部分
+            qSort(nums, middle + 1, end);
         }
-        return index;
+    }
+
+    private static int getMiddle(int[] nums, int start, int end) {
+        //以首位元素为中轴元素
+        int target = nums[start];
+        while (start < end) {
+            //从右往左找到第一个比中轴元素小的元素位置
+            while (start < end && nums[end] >= target) {
+                end--;
+            }
+            //交换比中轴小的元素到左端
+            nums[start] = nums[end];
+            //从左往右找到第一个比中轴元素大的元素位置
+            while (start < end && nums[start] <= target) {
+                start++;
+            }
+            //交换比中轴大的元素到右端
+            nums[end] = nums[start];
+        }
+        //扫描完成，中轴到位
+        nums[start] = target;
+        //返回中轴位置
+        return start;
     }
 
     //交换数组内两个元素
@@ -114,9 +139,10 @@ public class ClassicalSortingAlgorithm {
 
     public static void main(String[] args) {
         int[] nums = {3, 6, 2, 6, 9, 10, 3, 6, 9, 0, 13, 8, 1};
+//        int[] nums = {3, 6, 2, 3};
 //        int[] nums = {1, 2, 3, 10, 5, 7, 8, 9};
 //        System.out.println(Arrays.toString(bubbleSort(nums)));
 //        System.out.println(Arrays.toString(selectionSort(nums)));
-        System.out.println(Arrays.toString(insertionSort(nums)));
+        System.out.println(Arrays.toString(quickSort(nums)));
     }
 }
