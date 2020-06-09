@@ -1,4 +1,4 @@
-package solutions.dynamicplanning;
+package solutions.dp;
 
 /**
  * 新21点

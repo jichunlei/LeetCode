@@ -12,14 +12,14 @@ import java.util.List;
 public class Interview46 {
 
     /**
-     * 动态规划
+     * 解法一：动态规划
      *
      * @param num 1
      * @return int
      * @author xianzilei
      * @date 2020/6/9 11:21
      **/
-    public static int translateNum(int num) {
+    public static int translateNum1(int num) {
         //如果为0，直接返回
         if (num == 0) {
             return 1;
@@ -74,9 +74,34 @@ public class Interview46 {
         }
     }
 
+    /**
+     * 解法二：动态规划（不使用额外空间）
+     *
+     * @param num 1
+     * @return int
+     * @author xianzilei
+     * @date 2020/6/9 13:19
+     **/
+    public static int translateNum2(int num) {
+        //递归终止条件，如果位数只有1位，直接返回1
+        if (num < 10) {
+            return 1;
+        }
+        //截取后两位的数
+        int ba = num % 100;
+        //如果后两位无法组合起来翻译，则dp(i)=dp(i-1)
+        if (ba < 10 || ba > 25) {
+            return translateNum1(num / 10);
+        }
+        //否则dp(i)=dp(i-1)+dp(i-2)
+        else {
+            return translateNum1(num / 10) + translateNum1(num / 100);
+        }
+    }
 
     public static void main(String[] args) {
-        System.out.println(translateNum(12258));
+        System.out.println(translateNum1(12258));
+        System.out.println(translateNum2(12258));
     }
 
 }
