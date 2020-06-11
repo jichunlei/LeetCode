@@ -37,7 +37,7 @@ public class Solution739 {
     }
 
     /**
-     * 功能描述: 解法二--
+     * 功能描述: 解法二--优化遍历
      *
      * @param T 1
      * @return int[]
