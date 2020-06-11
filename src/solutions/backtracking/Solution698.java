@@ -1,4 +1,4 @@
-package solutions.recursion;
+package solutions.backtracking;
 
 /**
  * 划分为k个相等的子集--TODO
