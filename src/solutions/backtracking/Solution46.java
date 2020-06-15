@@ -23,7 +23,7 @@ public class Solution46 {
     }
 
     private static void backtrack(int[] nums, LinkedList<Integer> track, List<List<Integer>> result) {
-        //结束条件，当遍历到结尾时
+        //终止条件，即到达了决策树底层
         if (nums.length == track.size()) {
             result.add(new LinkedList<>(track));
             return;
@@ -47,6 +47,5 @@ public class Solution46 {
     public static void main(String[] args) {
         int[] nums = {1, 2, 3};
         System.out.println(permute(nums));
-        //
     }
 }
