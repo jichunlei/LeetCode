@@ -145,10 +145,53 @@ public class Solution300 {
         return result;
     }
 
+    /**
+     * 解法四：二分法
+     *
+     * @param nums 1
+     * @return int
+     * @author xianzilei
+     * @date 2020/6/19 8:56
+     **/
+    public static int lengthOfLIS4(int[] nums) {
+        //存放每个堆中的最小数（堆的最大个数不会超过nums的长度）
+        int[] top = new int[nums.length];
+        //初始堆数为0
+        int piles = 0;
+        //遍历数组进行堆的建立
+        for (int i = 0; i < nums.length; i++) {
+            //待放入堆中的数
+            int poker = nums[i];
+            //左右边界
+            int left = 0;
+            int right = piles;
+            //二分法查找poker能够放的堆位置（当堆的最小值比poker大时，则可放入该堆）
+            while (left < right) {
+                int mid = left + (right - left) / 2;
+                if (top[mid] > poker) {
+                    right = mid;
+                } else if (top[mid] < poker) {
+                    left = mid + 1;
+                } else {
+                    right = mid;
+                }
+            }
+            //当没有找到合适的堆放时，那就自己创建个堆
+            if (left == piles) {
+                piles++;
+            }
+            //更新该位置的堆的最小值
+            top[left] = poker;
+        }
+        //最后堆的个数即为最长上升子序列的长度
+        return piles;
+    }
+
     public static void main(String[] args) {
         int[] nums = {10, 9, 2, 5, 3, 7, 101, 18};
         System.out.println(lengthOfLIS1(nums));
         System.out.println(lengthOfLIS2(nums));
         System.out.println(lengthOfLIS3(nums));
+        System.out.println(lengthOfLIS4(nums));
     }
 }
