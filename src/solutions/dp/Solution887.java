@@ -32,11 +32,11 @@ public class Solution887 {
         //备忘录
         int[][] memory = new int[K + 1][N + 1];
         //递归获取结果
-        return dp1(K, N, memory);
+        return dp(K, N, memory);
     }
 
     //dp(i,j)：当鸡蛋个数为i个，楼层为j时的最坏情况下的最少扔鸡蛋的次数
-    private static int dp1(int i, int j, int[][] memory) {
+    private static int dp(int i, int j, int[][] memory) {
         //边界值处理
         //dp(1,j)=j
         if (i == 1) {
@@ -54,7 +54,7 @@ public class Solution887 {
         int result = Integer.MAX_VALUE;
         //遍历楼层进行计算
         for (int k = 1; k <= j; k++) {
-            result = Math.min(result, Math.max(dp1(i - 1, k - 1, memory), dp1(i, j - k, memory)) + 1);
+            result = Math.min(result, Math.max(dp(i - 1, k - 1, memory), dp(i, j - k, memory)) + 1);
         }
         //结果保存到备忘录中
         memory[i][j] = result;
