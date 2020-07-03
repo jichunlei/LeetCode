@@ -137,6 +137,56 @@ public class ClassicalSortingAlgorithm {
         nums[j] = temp;
     }
 
+    /**
+     * 归并排序
+     *
+     * @param nums 1
+     * @return int[]
+     * @author xianzilei
+     * @date 2020/7/3 17:17
+     **/
+    public static int[] mergeSort(int[] nums) {
+        int[] tmp = new int[nums.length];
+        sort(nums, 0, nums.length - 1, tmp);
+        return nums;
+    }
+
+    private static void sort(int[] nums, int left, int right, int[] tmp) {
+        if (left < right) {
+            int mid = left + (right - left) >> 1;
+            sort(nums, left, mid, tmp);
+            sort(nums, mid + 1, right, tmp);
+            merge(nums, left, mid, right, tmp);
+        }
+    }
+
+    private static void merge(int[] nums, int left, int mid, int right, int[] tmp) {
+        //左序列指针
+        int i = left;
+        //右序列指针
+        int j = mid + 1;
+        //临时数组指针
+        int t = 0;
+        while (i <= mid && j <= right) {
+            if (nums[i] <= nums[j]) {
+                tmp[t++] = nums[i++];
+            } else {
+                tmp[t++] = nums[j++];
+            }
+        }
+        while (i <= mid) {//将左边剩余元素填充进temp中
+            tmp[t++] = nums[i++];
+        }
+        while (j <= right) {//将右序列剩余元素填充进temp中
+            tmp[t++] = nums[j++];
+        }
+        t = 0;
+        //将temp中的元素全部拷贝到原数组中
+        while (left <= right) {
+            nums[left++] = tmp[t++];
+        }
+    }
+
     public static void main(String[] args) {
         int[] nums = {3, 6, 2, 6, 9, 10, 3, 6, 9, 0, 13, 8, 1};
 //        int[] nums = {3, 6, 2, 3};
