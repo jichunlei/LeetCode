@@ -57,7 +57,7 @@ public class Solution416 {
     }
 
     /**
-     * 解法一：动态规划（0-1背包问题：状态压缩）
+     * 解法二：动态规划（0-1背包问题：状态压缩）
      *
      * @param nums 1
      * @return boolean
