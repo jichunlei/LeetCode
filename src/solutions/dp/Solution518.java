@@ -4,7 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * 零钱兑换 II--TODO
+ * 零钱兑换 II
  *
  * @author : xianzilei
  * @date : 2020/6/24 08:53
@@ -91,18 +91,24 @@ public class Solution518 {
         return dp[coins.length][amount];
     }
 
-    //--TODO--看不懂
+    /**
+     * 解法三：解法二的优化（状态压缩）
+     *
+     * @param amount 1
+     * @param coins  2
+     * @return int
+     * @author xianzilei
+     * @date 2020/7/7 13:51
+     **/
     public static int change3(int amount, int[] coins) {
-        //dp(x)：必须使用第x个硬币凑出金额x时的方案数
-        //dp(0)=1;
-        //dp(x)=dp(x-coin[0])+dp(x-coin[1])+..+dp(x-coin[coin.length-1])
-
+        //dp[i][j]=dp[i-1][j]+dp[i][j-coins[i-1]]
+        //考虑到dp[i][j]只于当前行前面元素和上一行元素有关，因此可以考虑一位数组保存当前位置的上一行数据
         int[] dp = new int[amount + 1];
         dp[0] = 1;
-
+        //根据压缩的状态，代码可以优化为如下所示
         for (int coin : coins) {
-            for (int x = coin; x <= amount; x++) {
-                dp[x] += dp[x - coin];
+            for (int j = coin; j <= amount; j++) {
+                dp[j] = dp[j] + dp[j - coin];
             }
         }
         return dp[amount];

@@ -1,12 +1,21 @@
 package solutions.dp;
 
 /**
- * 通配符匹配-4TODO
+ * 通配符匹配
  *
  * @author : xianzilei
  * @date : 2020/7/6 13:09
  */
 public class Solution44 {
+    /**
+     * 解法：动态规划
+     *
+     * @param s 1
+     * @param p 2
+     * @return boolean
+     * @author xianzilei
+     * @date 2020/7/7 15:44
+     **/
     public static boolean isMatch(String s, String p) {
         //状态转移方程dp[i][j]：表示字符串s的前i个字符和模式串p的前j个字符是否匹配
         //--dp[0][0]=true;
@@ -22,28 +31,39 @@ public class Solution44 {
         //------当不使用*号时，dp[i][j]=dp[i][j-1]
         int m = s.length();
         int n = p.length();
+        //定义状态转移数组
         boolean[][] dp = new boolean[m + 1][n + 1];
+        //初始化已知值
         dp[0][0] = true;
         for (int j = 1; j <= n; j++) {
-            if (p.charAt(j-1) == '*') {
+            if (p.charAt(j - 1) == '*') {
                 dp[0][j] = true;
             } else {
                 break;
             }
         }
+        //双层循环求二维数组的剩余值
         for (int i = 1; i <= m; i++) {
             for (int j = 1; j <= n; j++) {
+                //s的第i位置的字符串s(i)
                 char chs = s.charAt(i - 1);
+                //p的第j位置的字符串p(j)
                 char cha = p.charAt(j - 1);
+                //如果p(j)为字母
                 if (cha >= 'a' && cha <= 'z') {
                     dp[i][j] = cha == chs && dp[i - 1][j - 1];
-                } else if (cha == '?') {
+                }
+                //如果p(j)为?
+                else if (cha == '?') {
                     dp[i][j] = dp[i - 1][j - 1];
-                } else {
+                }
+                //如果p(j)为*
+                else {
                     dp[i][j] = dp[i][j - 1] || dp[i - 1][j];
                 }
             }
         }
+        //返回结果
         return dp[m][n];
     }
 
