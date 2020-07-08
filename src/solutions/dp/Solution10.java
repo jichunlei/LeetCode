@@ -1,12 +1,21 @@
 package solutions.dp;
 
 /**
- * 正则表达式匹配--TODO
+ * 正则表达式匹配
  *
  * @author : xianzilei
  * @date : 2020/7/6 11:14
  */
 public class Solution10 {
+    /**
+     * 解法：动态规划
+     *
+     * @param s 1
+     * @param p 2
+     * @return boolean
+     * @author xianzilei
+     * @date 2020/7/8 13:24
+     **/
     public static boolean isMatch(String s, String p) {
         //状态转移数组dp[i][j]：表示字符串s前i个字符串与模式串p前j个字符串是否匹配
         //dp[0][0]=true;
