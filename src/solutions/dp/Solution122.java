@@ -1,7 +1,7 @@
 package solutions.dp;
 
 /**
- * 买卖股票的最佳时机 II--TODO
+ * 买卖股票的最佳时机 II
  *
  * @author : xianzilei
  * @date : 2020/7/11 14:00
@@ -31,16 +31,37 @@ public class Solution122 {
     }
 
     public static int maxProfit2(int[] prices) {
-        int result = 0;
         //解题思路：
         //状态转移方程dp[i][j]：第i天持有状态为j时的最大收益，j：0-不持有，1-持有
-        //
+        //dp[0][0]=0;
+        //dp[1][0]=0;
+        //dp[1][1]=-prices[0];
+        //dp[i][0]=max{dp[i-1][0],dp[i-1][1]+prices[i-1]}(当i>=2)
+        //--i-1天未持有时：dp[i][0]=dp[i-1][0]
+        //--i-1天持有时：dp[i][0]=dp[i-1][1]+prices[i-1]
+        //--求二者最大值即可
+        //dp[i][1]=max{dp[i-1][1],dp[i-1][0]-prices[i-1]}(当i>=2)
+        //--i-1天未持有时：dp[i][1]=dp[i-1][0]-prices[i-1]
+        //--i-1天持有时：dp[i][1]=dp[i-1][1]
+        //--求二者最大值即可
+
+        int length = prices.length;
+        int[][] dp = new int[length + 1][2];
+        dp[0][0] = 0;
+        dp[1][0] = 0;
+        dp[1][1] = -prices[0];
+        for (int i = 2; i <= length; i++) {
+            //i-1天未持有
+            dp[i][0] = Math.max(dp[i - 1][0], dp[i - 1][1] + prices[i - 1]);
+            dp[i][1] = Math.max(dp[i - 1][1], dp[i - 1][0] - prices[i - 1]);
+        }
         //返回结果
-        return result;
+        return Math.max(dp[length][0], 0);
     }
 
     public static void main(String[] args) {
         int[] prices = {7, 6, 4, 3, 1};
         System.out.println(maxProfit1(prices));
+        System.out.println(maxProfit2(prices));
     }
 }
