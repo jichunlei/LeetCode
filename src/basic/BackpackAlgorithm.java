@@ -85,10 +85,10 @@ public class BackpackAlgorithm {
     }
 
     public static void main(String[] args) {
-        int N = 3;
-        int W = 4;
-        int[] wt = {2, 1, 3};
-        int[] val = {4, 2, 3};
+        int N = 4;
+        int W = 5;
+        int[] wt = {2, 1, 3,2};
+        int[] val = {12, 10, 20,15};
         System.out.println(backpack01Recursion(N, W, wt, val));
         System.out.println(backpack01Iteration(N, W, wt, val));
     }
