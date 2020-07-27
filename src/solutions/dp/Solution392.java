@@ -1,5 +1,7 @@
 package solutions.dp;
 
+import java.util.Arrays;
+
 /**
  * 判断子序列
  *
@@ -65,10 +67,38 @@ public class Solution392 {
         return dp[length1][length2];
     }
 
+    /**
+     * 解法三：解法二优化（状态压缩）
+     *
+     * @param s 1
+     * @param t 2
+     * @return boolean
+     * @author xianzilei
+     * @date 2020/7/27 22:11
+     **/
+    public static boolean isSubsequence3(String s, String t) {
+        //考虑到dp[i][j]只与上一层有关，因此可以将二维数组压缩为一维数组
+        int length1 = s.length();
+        int length2 = t.length();
+        boolean[] dp = new boolean[length1 + 1];
+        dp[0] = true;
+        //注意此处的遍历顺序和方式
+        for (int j = 1; j <= length2; j++) {
+            for (int i = length1; i >= 1; i--) {
+                if (s.charAt(i - 1) == t.charAt(j - 1)) {
+                    dp[i] = dp[i - 1];
+                }
+            }
+        }
+        return dp[length1];
+    }
+
     public static void main(String[] args) {
         System.out.println(isSubsequence1("ioi", ""));
         System.out.println(isSubsequence1("axc", "ahbgdc"));
         System.out.println(isSubsequence2("abc", "ahbgdc"));
         System.out.println(isSubsequence2("axc", "ahbgdc"));
+        System.out.println(isSubsequence3("abc", "ahbgdc"));
+        System.out.println(isSubsequence3("abc", "ahbgdc"));
     }
 }
