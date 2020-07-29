@@ -57,6 +57,15 @@ public class Solution410 {
         return dp[length][m];
     }
 
+    /**
+     * 解法二：贪心+二分
+     *
+     * @param nums 1
+     * @param m 2
+     * @return int
+     * @author xianzilei
+     * @date 2020/7/29 17:24
+     **/
     public static int splitArray2(int[] nums, int m) {
         //计算上限（数组全部和）和下限值（数组最大值）
         int max = 0;
