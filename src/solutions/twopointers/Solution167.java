@@ -39,18 +39,27 @@ public class Solution167 {
      * @date 2020/7/30 13:42
      **/
     public static int[] twoSum2(int[] numbers, int target) {
+        //定义左右指针，初始位置分别在数组的起始和结束位置
         int left = 0;
         int right = numbers.length - 1;
+        //指针位置调整
         while (left < right) {
+            //计算当前和
             int tmp = numbers[left] + numbers[right];
+            //如果满足条件直接返回
             if (tmp == target) {
                 return new int[]{left + 1, right + 1};
-            } else if (tmp > target) {
+            }
+            //如果当前和大于目标值，说明需要减小当前和，即右指针左移来减小和
+            else if (tmp > target) {
                 right--;
-            } else {
+            }
+            //如果当前和小于目标值，说明需要增大当前和，即右指针左移来增大和
+            else {
                 left++;
             }
         }
+        //如果没有找到返回0,0
         return new int[]{0, 0};
     }
 
