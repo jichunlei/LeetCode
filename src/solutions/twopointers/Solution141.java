@@ -48,26 +48,22 @@ public class Solution141 {
      * @date 2020/7/29 17:40
      **/
     public static boolean hasCycle2(ListNode head) {
-        //特殊情况的排除
-        if (head == null) {
-            return false;
-        }
-        //定义慢、快指针，分别指向头节点和头结点的下一节点
+        //定义慢、快指针，同时指向头节点
         ListNode slowPointer = head;
-        ListNode fastPointer = head.next;
-        //当快慢指针不重合时
-        while (slowPointer != fastPointer) {
-            //如果快指针到达或即将到达链表结尾，则直接返回false，该情况一定没有环
-            if (fastPointer == null || fastPointer.next == null) {
-                return false;
-            }
-            //快指针每次走2步
-            fastPointer = fastPointer.next.next;
-            //慢指针每次走1步
+        ListNode fastPointer = head;
+        //当快指针没有遍历到终点时，循环遍历
+        while (fastPointer != null && fastPointer.next != null) {
+            //慢指针每次走一步
             slowPointer = slowPointer.next;
+            //快指针每次走两步
+            fastPointer = fastPointer.next.next;
+            //当快慢指针重合时，代表链表存在环
+            if (slowPointer == fastPointer) {
+                return true;
+            }
         }
-        //当快慢指针重合则表示存在环
-        return true;
+        //如果快指针遍历到终点时，则表示没有环
+        return false;
     }
 
     public static void main(String[] args) {
