@@ -1,6 +1,7 @@
 package solutions.stack;
 
 import java.util.HashMap;
+import java.util.LinkedList;
 import java.util.Stack;
 
 /**
@@ -11,32 +12,40 @@ import java.util.Stack;
  */
 public class Solution20 {
 
+    /**
+     * 解法：栈
+     *
+     * @param s 1
+     * @return boolean
+     * @author xianzilei
+     * @date 2020/8/14 8:33
+     **/
     public static boolean isValid(String s) {
+        //特殊情况下的排除
         if (s == null || "".equals(s)) {
             return true;
         }
-        char[] chars = s.toCharArray();
         HashMap<Character, Character> map = new HashMap<>();
+        map.put('}', '{');
         map.put(')', '(');
         map.put(']', '[');
-        map.put('}', '{');
         Stack<Character> stack = new Stack<>();
-        for (char c : chars) {
-            if (map.containsKey(c)) {
-                if (!stack.empty()) {
-                    if (map.get(c).equals(stack.peek())) {
-                        stack.pop();
-                    } else {
-                        return false;
-                    }
-                } else {
-                    return false;
-                }
-            } else {
+        for (int i = 0; i < s.length(); i++) {
+            char c = s.charAt(i);
+            //如果是{、(、[这三种，直接入栈
+            if (!map.containsKey(c)) {
                 stack.push(c);
             }
+            //如果是}、]、)这三种，直接出栈
+            else {
+                //如果此时栈是空的或者出栈的元素与当前字符无法匹配，直接返回false
+                if (stack.isEmpty() || !stack.pop().equals(map.get(c))) {
+                    return false;
+                }
+            }
         }
-        return stack.empty();
+        //如果栈为空则表示匹配成功，否则匹配失败
+        return stack.isEmpty();
     }
 
     public static void main(String[] args) {
