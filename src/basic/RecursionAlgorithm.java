@@ -57,6 +57,7 @@ public class RecursionAlgorithm {
     private static void printListNode(ListNode head) {
         if (head == null) {
             System.out.println("null");
+            return;
         }
         System.out.print(head.val);
         while (head.next != null) {
