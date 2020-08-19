@@ -2,7 +2,6 @@ package solutions.tree;
 
 import pojo.ListNode;
 import pojo.TreeNode;
-import solutions.array.Solution1;
 
 /**
  * 有序链表转换二叉搜索树
