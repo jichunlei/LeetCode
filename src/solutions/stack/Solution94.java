@@ -22,30 +22,29 @@ public class Solution94 {
      * @date 2019/12/16 19:21
      **/
     public static List<Integer> inorderTraversal1(TreeNode root) {
-        List<Integer> list = new ArrayList<>();
+        List<Integer> result = new ArrayList<>();
         if (root != null) {
-            fun(root, list);
+            dfs(root, result);
         }
-        return list;
+        return result;
     }
 
     /**
      * 功能描述: 递归写法
      *
-     * @param node 1
-     * @param list 2
+     * @param node   1
+     * @param result 2
      * @return void
      * @author xianzilei
      * @date 2019/12/30 8:42
      **/
-    private static void fun(TreeNode node, List<Integer> list) {
-        if (node.left != null) {
-            fun(node.left, list);
+    private static void dfs(TreeNode node, List<Integer> result) {
+        if (node == null) {
+            return;
         }
-        list.add(node.val);
-        if (node.right != null) {
-            fun(node.right, list);
-        }
+        dfs(node.left, result);
+        result.add(node.val);
+        dfs(node.right, result);
     }
 
     /**
@@ -57,7 +56,9 @@ public class Solution94 {
      * @date 2019/12/16 19:38
      **/
     public static List<Integer> inorderTraversal2(TreeNode root) {
-        List<Integer> list = new ArrayList<>();
+        //结果集
+        List<Integer> result = new ArrayList<>();
+        //定义栈记忆节点
         Stack<TreeNode> stack = new Stack<>();
         TreeNode node = root;
         while (node != null || !stack.isEmpty()) {
@@ -66,10 +67,10 @@ public class Solution94 {
                 node = node.left;
             }
             node = stack.pop();
-            list.add(node.val);
+            result.add(node.val);
             node = node.right;
         }
-        return list;
+        return result;
     }
 
 
