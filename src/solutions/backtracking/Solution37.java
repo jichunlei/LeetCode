@@ -10,16 +10,12 @@ import java.util.Arrays;
  */
 public class Solution37 {
 
-    public static void solveSudoku(char[][] board) {
-        //特殊情况下的处理
-        if (board == null || board.length == 0) {
-            return;
-        }
-        //回溯
+    public void solveSudoku(char[][] board) {
+        //回溯（这里不需要接受返回的参数是因为题目已经说明肯定存在唯一解）
         backtrack(board, 0, 0);
     }
 
-    private static boolean backtrack(char[][] board, int row, int col) {
+    private boolean backtrack(char[][] board, int row, int col) {
         //当列遍历到边界时，进入下一行起始处
         if (col == 9) {
             return backtrack(board, row + 1, 0);
@@ -52,7 +48,7 @@ public class Solution37 {
         return false;
     }
 
-    private static boolean isValid(char[][] board, int row, int col, char ch) {
+    private boolean isValid(char[][] board, int row, int col, char ch) {
         // 三个方向，任一方向重复，ch就不能放在这个位置
         for (int i = 0; i < 9; i++) {
             // 同一行九个位置已出现 ch
@@ -83,7 +79,10 @@ public class Solution37 {
                 {'.', '.', '.', '4', '1', '9', '.', '.', '5'},
                 {'.', '.', '.', '.', '8', '.', '.', '7', '9'}
         };
-        solveSudoku(board);
-        System.out.println(Arrays.deepToString(board));
+        Solution37 solution37 = new Solution37();
+        solution37.solveSudoku(board);
+        for (char[] chars : board) {
+            System.out.println(Arrays.toString(chars));
+        }
     }
 }
