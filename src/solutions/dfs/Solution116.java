@@ -47,7 +47,7 @@ public class Solution116 {
     }
 
     /**
-     * 解法二：
+     * 解法二：使用已有的next指针
      *
      * @param root 1
      * @return pojo.tree.Node
@@ -85,6 +85,54 @@ public class Solution116 {
                 start = start.left;
                 //更新当前节点
                 cur = start;
+            }
+        }
+        //返回结果
+        return root;
+    }
+
+    /**
+     * 解法三：同解法二
+     *
+     * @param root 1
+     * @return pojo.tree.Node
+     * @author xianzilei
+     * @date 2020/10/15 8:40
+     **/
+    public Node connect3(Node root) {
+        //解题思路：同解法二，只是保存了pre节点，每次连接pre->左子树，左子树->右子树
+        if (root == null) {
+            return null;
+        }
+        //每层开始的节点
+        Node start = root;
+        //当前遍历的节点
+        Node cur = start;
+        //当前节点的下一层的前序节点
+        Node pre = null;
+        //当存在下一层时
+        while (start.left != null) {
+            //如果当前遍历的节点不为空
+            if (cur != null) {
+                //如果pre不为空，则连接当前节点的左子树上去
+                if (pre != null) {
+                    pre.next = cur.left;
+                }
+                //连接当前节点的左右子树
+                cur.left.next = cur.right;
+                //更新pre
+                pre = cur.right;
+                //当前节点后移
+                cur = cur.next;
+            }
+            //如果当前节点为空，则说明该层遍历到终点了，进入下一层
+            else {
+                //进入下一层的开始节点
+                start = start.left;
+                //更新当前节点
+                cur = start;
+                //更新pre
+                pre = null;
             }
         }
         //返回结果
