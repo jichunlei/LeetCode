@@ -97,8 +97,7 @@ public class Solution844 {
         if (S.charAt(indexS) != T.charAt(indexT)) {
           return false;
         }
-      }
-      else {
+      } else {
         //如果存在一个越界，一个没有越界，则直接返回false
         if (indexS >= 0 || indexT >= 0) {
           return false;
