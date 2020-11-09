@@ -26,12 +26,7 @@ public class Solution347 {
             map.put(num, map.getOrDefault(num, 0) + 1);
         }
         //定义优先队列
-        PriorityQueue<Integer> priorityQueue = new PriorityQueue<>(new Comparator<Integer>() {
-            @Override
-            public int compare(Integer key1, Integer key2) {
-                return map.get(key1) - map.get(key2);
-            }
-        });
+        PriorityQueue<Integer> priorityQueue = new PriorityQueue<>(Comparator.comparingInt(map::get));
         for (Map.Entry<Integer, Integer> entry : map.entrySet()) {
             Integer key = entry.getKey();
             Integer value = entry.getValue();
