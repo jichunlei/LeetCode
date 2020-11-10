@@ -3,21 +3,22 @@ package solutions.array;
 import java.util.Arrays;
 
 /**
+ * 下一个排列
+ *
  * @author : xianzilei
  * @date : 2019/10/12 07:49
- * @Description: 下一个排列
  */
 public class Solution31 {
 
     /**
      * 尾部扫描法
      *
-     * @param nums
-     * @return: void
-     * @author : xianzilei
-     * @date : 2019/10/12 8:47
+     * @param nums 1
+     * @return void
+     * @author xianzilei
+     * @date 2020/11/10 8:50
      **/
-    public static void nextPermutation1(int[] nums) {
+    public void nextPermutation1(int[] nums) {
         //目标位置，标记需要修改的位置，初始化为-1
         int target = -1;
         //从最右往左寻找不满足增序的第一个元素位置
@@ -54,7 +55,7 @@ public class Solution31 {
         nums[j] = temp;
     }
 
-    //反转数组指定位置的元素
+    //反转数组指定范围的元素
     private static void reverse(int[] nums, int start, int end) {
         while (start < end) {
             swap(nums, start, end);
@@ -65,7 +66,8 @@ public class Solution31 {
 
     public static void main(String[] args) {
         int[] nums1 = {1, 1, 5, 5, 4, 3, 7, 7};
-        nextPermutation1(nums1);
-        System.out.println("解法一：" + Arrays.toString(nums1));
+        Solution31 solution31 = new Solution31();
+        solution31.nextPermutation1(nums1);
+        System.out.println(Arrays.toString(nums1));
     }
 }
