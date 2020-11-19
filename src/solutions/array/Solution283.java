@@ -58,12 +58,15 @@ public class Solution283 {
      * @date 2020/11/19 9:01
      **/
     public void moveZeroes2(int[] nums) {
+        //当前可以存放非0元素的位置（也可以理解为非0元素的个数）
         int j = 0;
         for (int i = 0; i < nums.length; i++) {
+            //遇到非0元素，则移动到可放置的位置，同时j右移
             if (nums[i] != 0) {
                 nums[j++] = nums[i];
             }
         }
+        //剩余位置直接写0
         for (int i = j; i < nums.length; i++) {
             nums[i] = 0;
         }
