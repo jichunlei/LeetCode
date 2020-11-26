@@ -83,7 +83,7 @@ public class Solution164 {
     }
 
     /**
-     * 解法三：桶排法--TODO
+     * 解法三：桶排法
      *
      * @param nums 1
      * @return int
@@ -91,6 +91,7 @@ public class Solution164 {
      * @date 2020/11/26 9:04
      **/
     public int maximumGap3(int[] nums) {
+        //特殊情况下的排除
         if (nums.length <= 1) {
             return 0;
         }
@@ -102,12 +103,13 @@ public class Solution164 {
             min = Math.min(nums[i], min);
             max = Math.max(nums[i], max);
         }
-        if(max - min == 0) {
+        //如果最大值等于最小值，则数组全部为0，直接返回0
+        if (max - min == 0) {
             return 0;
         }
 
-        //算出每个箱子的范围
-        int interval = (int) Math.ceil((double)(max - min) / (n - 1));
+        //算出每个箱子的范围（即箱子的取值范围）
+        int interval = (int) Math.ceil((double) (max - min) / (n - 1));
 
         //每个箱子里数字的最小值和最大值
         int[] bucketMin = new int[n - 1];
@@ -119,16 +121,16 @@ public class Solution164 {
         Arrays.fill(bucketMax, -1);
 
         //考虑每个数字
-        for (int i = 0; i < nums.length; i++) {
-            //当前数字所在箱子编号
-            int index = (nums[i] - min) / interval;
+        for (int num : nums) {
+            //计算当前当前数字应该存放的箱子编号
+            int index = (num - min) / interval;
             //最大数和最小数不需要考虑
-            if(nums[i] == min || nums[i] == max) {
+            if (num == min || num == max) {
                 continue;
             }
             //更新当前数字所在箱子的最小值和最大值
-            bucketMin[index] = Math.min(nums[i], bucketMin[index]);
-            bucketMax[index] = Math.max(nums[i], bucketMax[index]);
+            bucketMin[index] = Math.min(num, bucketMin[index]);
+            bucketMax[index] = Math.max(num, bucketMax[index]);
         }
 
         int maxGap = 0;
@@ -140,7 +142,6 @@ public class Solution164 {
             if (bucketMax[i] == -1) {
                 continue;
             }
-
             //当前箱子的最小值减去前一个箱子的最大值
             maxGap = Math.max(bucketMin[i] - previousMax, maxGap);
             previousMax = bucketMax[i];
